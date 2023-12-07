@@ -16,8 +16,7 @@ public class Fish {
     }
 
     @Ignore
-    public Fish(int id, String naam, String kleur) {
-        this.id = id;
+    public Fish( String naam, String kleur) {
         this.naam = naam;
         this.kleur = kleur;
     }

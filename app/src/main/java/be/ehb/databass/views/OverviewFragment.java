@@ -9,8 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -51,6 +54,11 @@ public class OverviewFragment extends Fragment {
 
         viewModel.soLongAndThanksForAllTheFish().observe(getViewLifecycleOwner(), (List<Fish> items) -> {
            adapter.addItems(items);
+        });
+
+        FloatingActionButton fab = view.findViewById(R.id.btn_new_fish);
+        fab.setOnClickListener( (View v) -> {
+            Navigation.findNavController(view).navigate(R.id.action_overviewFragment_to_newFishFragment);
         });
     }
 }
