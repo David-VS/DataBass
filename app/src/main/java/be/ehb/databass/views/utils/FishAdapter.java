@@ -33,6 +33,7 @@ public class FishAdapter extends RecyclerView.Adapter<FishAdapter.FishViewHolder
     }
 
     public void addItems(List<Fish> newItems){
+        this.items = new ArrayList<Fish>();
         this.items.addAll(newItems);
     }
 

@@ -54,6 +54,7 @@ public class OverviewFragment extends Fragment {
 
         viewModel.soLongAndThanksForAllTheFish().observe(getViewLifecycleOwner(), (List<Fish> items) -> {
            adapter.addItems(items);
+           adapter.notifyDataSetChanged();
         });
 
         FloatingActionButton fab = view.findViewById(R.id.btn_new_fish);
